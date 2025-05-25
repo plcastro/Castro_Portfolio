@@ -11,7 +11,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 2px solid white;
+  border: 2px solid rgb(95, 55, 55);
   color: aliceblue;
   font-family: "Poppins", sans-serif;
 }
@@ -39,37 +39,43 @@ p {
 }
 
 nav {
+  background-color: var(--background-color);
   display: flex;
   margin: auto;
-  padding: 2% 6% 1%;
   width: 100%;
-  flex-wrap: wrap;
-  flex-direction: row;
   justify-content: right;
-  align-items: center;
+  text-align: center;
+  padding: 0 10%;
 }
 nav ul li {
   list-style: none;
   display: inline-block;
-  padding: 6px 12px;
+  margin: 24px 0 0;
 }
+
 nav ul li a {
   color: white;
   text-decoration: none;
   font-size: 16px;
+  height: 100%;
+  padding: 0 24px;
+  display: block;
 }
 nav ul li a::after {
   content: "";
   width: 0;
-  height: 2px;
+  height: 4px;
   background: var(--white);
   display: block;
   margin: auto;
+  transition: width 1s;
 }
 nav ul li a:hover::after,
 nav ul li a.active::after {
   width: 100%;
-  transition: 1s;
+}
+nav ul li a.active::after {
+  background: var(--white); /* or any color you want */
 }
 section {
   display: block;
@@ -128,13 +134,16 @@ section {
     text-align: center;
   }
   #col-home-profile img {
-    width: 40%;
+    width: 50%;
   }
   .col-home-intro {
     order: 2;
   }
 }
 @media screen and (max-width: 768px) {
+  nav {
+    display: block;
+  }
   section {
     flex-direction: column;
   }
