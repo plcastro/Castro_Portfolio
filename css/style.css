@@ -23,14 +23,7 @@ body {
   padding: 0;
   scroll-behavior: smooth;
 }
-h1 {
-  text-align: left;
-  color: #ffffff00;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: rgb(255, 255, 255);
-  font-size: 64px;
-  font-weight: 1000;
-}
+
 h2 {
   font-size: 32px;
 }
@@ -78,12 +71,24 @@ nav ul li a.active::after {
   background: var(--white); /* or any color you want */
 }
 section {
-  display: block;
+  display: flex;
   height: 100vh;
   width: 60%;
   margin: auto;
 }
-.row-home {
+.row-title {
+  flex: 100%;
+  height: 100px;
+  margin: auto;
+  text-align: center;
+  color: #ffffff00;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  font-size: 64px;
+  font-weight: 1000;
+}
+.row-home,
+.row-contact {
   display: flex;
 }
 .col-home-intro,
@@ -99,19 +104,33 @@ section {
 .col-home-intro {
   flex: 60%;
 }
+#name,
+.col-title {
+  text-align: left !important;
+  color: #ffffff00;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(255, 255, 255);
+  font-size: 64px;
+  font-weight: 1000;
+}
 .row-about {
   display: block;
-  padding-top: 10%;
-  animation: appear linear;
-  animation-timeline: view();
-  animation-range: entry 0;
-}
-.row-about h1 {
-  text-align: center;
 }
 .row-about p {
   text-align: justify;
   margin-top: 20px;
+}
+.col-title {
+  margin: auto;
+}
+footer {
+  background-color: var(--background-color);
+  color: var(--white);
+  text-align: center;
+  padding: 20px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 @media screen and (max-width: 1280px) {
