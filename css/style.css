@@ -20,7 +20,7 @@
 }
 body {
   background-color: var(--background-color);
-  min-height: 100vh;
+  height: 100vh;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -109,7 +109,8 @@ section {
   margin: auto;
   align-items: center;
 }
-#contact-me-button {
+#contact-me-button,
+.button {
   align-items: center;
   background-image: linear-gradient(
     144deg,
@@ -140,11 +141,14 @@ section {
 }
 
 #contact-me-button:active,
-#contact-me-button:hover {
+.button:active,
+#contact-me-button:hover,
+.button:hover {
   outline: 0;
 }
 
-#contact-me-button span {
+#contact-me-button span,
+.button span {
   background-color: rgb(5, 6, 45);
   padding: 16px 24px;
   border-radius: 6px;
@@ -153,12 +157,19 @@ section {
   transition: 300ms;
 }
 
-#contact-me-button:hover span {
+#contact-me-button:hover span,
+.button:hover span {
   background: none;
 }
 
-#contact-me-button:active {
+#contact-me-button:active,
+.button:active {
   transform: scale(0.9);
+}
+.card .button {
+  margin-top: auto;
+  margin-bottom: 10px;
+  align-self: center; /* Center horizontally */
 }
 #name {
   text-align: left;
@@ -177,10 +188,14 @@ section {
   height: fit-content;
   margin: 20px auto;
 }
-.col-skills {
+.col-skills,
+.col-project {
   display: flex;
   flex-direction: row;
   flex: 33%;
+  margin: auto;
+  height: 350px;
+  width: 50%;
   padding: 2%;
   text-align: center;
 }
@@ -188,6 +203,8 @@ section {
   display: flex;
   flex-direction: column;
   flex: 100%;
+  margin: auto;
+  height: 100%;
   padding: 2% 10%;
   text-align: center;
   background-color: var(--white);
@@ -204,10 +221,16 @@ section {
   list-style: none;
   font-size: 24px;
 }
-.col-skills h2 {
+.card h2 {
   color: var(--background-color);
   border-bottom: 4px solid var(--background-color);
 }
+.card p {
+  color: var(--background-color);
+  font-size: 16px;
+  margin: 10px auto;
+}
+
 .row-contact p {
   text-align: center;
   margin: 20px auto;
@@ -218,12 +241,12 @@ main {
 
 footer {
   padding: 2%;
-  margin-top: auto;
+  margin-bottom: auto;
   position: static;
   text-align: center;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280px) {
   section {
     padding: 0 10%;
     height: fit-content;
@@ -269,6 +292,7 @@ footer {
   }
   section {
     flex-direction: row;
+    margin-top: 20px;
     padding: 0 5%;
   }
   .row-home {
@@ -294,7 +318,8 @@ footer {
   p {
     font-size: 16px;
   }
-  .col-skills {
+  .col-skills,
+  .col-project {
     flex: 100%;
   }
   #contact-me-button {
