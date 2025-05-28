@@ -5,6 +5,7 @@
   --light-blue: #008cff;
   --light-purple: #ea00ff;
   --background-color: #000f1c;
+  --slight-transparent-background-color: #000f1c9e;
   --transparent: #ffffff00;
 }
 * {
@@ -35,13 +36,16 @@ p {
 nav {
   display: flex;
   position: fixed;
-  margin: auto;
+  top: 0;
   height: 70px;
   width: 100%;
   justify-content: right;
   align-items: end;
   text-align: center;
-  padding: 0 10%;
+  padding: 10px 10%;
+  background-color: var(--slight-transparent-background-color);
+  backdrop-filter: blur(10px);
+  z-index: 100;
 }
 nav ul li {
   list-style: none;
@@ -55,7 +59,7 @@ nav ul li a {
   padding: 0 24px;
   display: block;
 }
-nav ul li a::after {
+nav ul li a:not(.icon-link)::after {
   content: "";
   width: 0;
   height: 4px;
@@ -177,6 +181,7 @@ section {
 }
 .card h3 {
   border-bottom: 4px solid var(--white);
+  width: 90%;
 }
 .card p {
   font-size: 16px;
@@ -293,25 +298,42 @@ section {
   text-align: center;
   margin: 20px auto;
 }
+.contacts {
+  display: flex;
+  flex: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.contacts img {
+  flex: 25%;
+  margin: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+.contacts img:hover {
+  transform: scale(1.1);
+}
 main {
   flex: 1;
 }
 footer {
-  padding: 2%;
-  margin-bottom: auto;
-  position: static;
+  display: flex;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+}
+footer p {
   text-align: center;
 }
 @media screen and (max-width: 1280px) {
-  .col-project {
+  .col-project,
+  .col-skills {
     flex: 50%;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  nav {
-    height: 20px;
-  }
   section {
     padding: 0 10%;
     height: fit-content;
@@ -359,6 +381,7 @@ footer {
   #close-icon {
     display: block;
     margin-right: auto;
+    margin-bottom: 20px;
   }
   .hide-on-mobile {
     display: none;
@@ -368,10 +391,12 @@ footer {
   }
   nav {
     display: block;
+    backdrop-filter: none;
+    background-color: var(--transparent);
   }
-  nav ul li a::after {
-    height: 0;
-    background-color: #103250;
+  nav ul li a:not(.icon-link)::after {
+    height: 4px;
+    background-color: #ffffff;
   }
   nav ul li a {
     padding: 10px 24px;
@@ -406,7 +431,13 @@ footer {
   }
   .col-skills,
   .col-project {
-    flex: 100%;
+    flex: 90%;
+  }
+  .col-skills {
+    height: 200px;
+  }
+  .row-skills .card_content {
+    padding: 10px;
   }
   #download-cv-button {
     text-align: center;
@@ -414,5 +445,11 @@ footer {
   }
   #download-cv-button span {
     font-size: 16px;
+  }
+  .contacts img {
+    flex: 50%;
+    height: 42px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
   }
 }

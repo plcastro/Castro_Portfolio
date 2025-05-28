@@ -26,7 +26,7 @@
         <li class="hide-on-mobile"><a href="#projects">Projects</a></li>
         <li class="hide-on-mobile"><a href="#contact">Contact</a></li>
         <li class="menu-button hide-on-mobile" onclick="showSidebar()">
-          <a href="#">
+          <a href="javascript:void(0)" class="icon-link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -44,7 +44,7 @@
       </ul>
       <ul class="sidebar-mobile">
         <li onclick="hideSidebar()">
-          <a href="#">
+          <a href="javascript:void(0)" class="icon-link">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               height="24px"
@@ -208,7 +208,7 @@
             </div>
           </div>
         </div>
-        <div class="col-project">
+        <!-- <div class="col-project">
           <div class="card">
             <div class="card_content">
               <h3>Argos Bank (ATM)</h3>
@@ -221,7 +221,7 @@
               >
             </div>
           </div>
-        </div>
+        </div> -->
       </section>
       <section id="contact" class="row-contact">
         <h1 class="row-title">Contacts</h1>
@@ -232,6 +232,16 @@
             >castrop@students.nu-moa.edu.ph</a
           >
         </p>
+        <div class="contacts">
+          <p>OR</p>
+          <p>You can also connect with me on my social media accounts:</p>
+          <div class="soc-med-account">
+            <img src="img/Facebook.svg" alt="Facebook logo" srcset="" />
+            <img src="img/Instagram.svg" alt="Instagram logo" srcset="" />
+            <img src="img/Linkedin.svg" alt="Linkedin logo" srcset="" />
+            <img src="img/github_svg.svg" alt="Github Logo" srcset="" />
+          </div>
+        </div>
       </section>
     </main>
     <footer>
@@ -247,17 +257,17 @@
         count: 100,
         size: {
           min: 2,
-          max: 18,
+          max: 30,
           pulse: 0,
         },
         speed: {
           x: {
             min: 0,
-            max: 0.7,
+            max: 1.8,
           },
           y: {
             min: 0,
-            max: 1.1,
+            max: 1.8,
           },
         },
         colors: {
