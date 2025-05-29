@@ -37,6 +37,7 @@ nav {
   display: flex;
   position: fixed;
   top: 0;
+  right: 0;
   height: 70px;
   width: 100%;
   justify-content: right;
@@ -45,6 +46,7 @@ nav {
   padding: 10px 10%;
   background-color: var(--slight-transparent-background-color);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 100;
 }
 nav ul li {
@@ -135,7 +137,29 @@ section {
   margin: auto;
   align-items: center;
 }
+.col-home-intro #name {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #fff; /* Thinner cursor */
+  width: 18ch;
+  max-width: 0;
+  animation: typing 2.5s steps(17, end) forwards, blink 0.7s step-end infinite;
+}
 
+@keyframes typing {
+  from {
+    max-width: 0;
+  }
+  to {
+    max-width: 17ch;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
 #name {
   text-align: left;
   color: #ffffff00;
@@ -311,6 +335,9 @@ section {
   margin: 10px;
   transition: transform 0.3s ease-in-out;
 }
+.contacts a {
+  text-decoration: none;
+}
 .contacts img:hover {
   transform: scale(1.1);
 }
@@ -377,6 +404,8 @@ footer p {
   #menu-icon {
     display: block;
     margin-left: auto;
+    border: 2px solid var(--white);
+    border-radius: 7px;
   }
   #close-icon {
     display: block;
@@ -389,17 +418,12 @@ footer p {
   .menu-button {
     display: block;
   }
-  nav {
-    display: block;
-    backdrop-filter: none;
-    background-color: var(--transparent);
-  }
   nav ul li a:not(.icon-link)::after {
     height: 4px;
     background-color: #ffffff;
   }
   nav ul li a {
-    padding: 10px 24px;
+    padding: 10px;
   }
   section {
     flex-direction: row;
@@ -415,6 +439,21 @@ footer p {
   }
   .col-home-intro {
     flex: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    .col-home-intro #name {
+      font-size: 27px;
+      animation: typing 2.5s steps(19, end) forwards,
+        blink 0.7s step-end infinite;
+    }
+    @keyframes typing {
+      from {
+        max-width: 0;
+      }
+      to {
+        max-width: 17ch;
+      }
+    }
   }
   h1,
   #name,
