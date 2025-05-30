@@ -13,7 +13,6 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  /* border: 2px solid rgb(217, 72, 72); */
   color: aliceblue;
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
@@ -183,7 +182,7 @@ section {
   flex-direction: row;
   margin: auto;
   width: 50%;
-  padding: 2%;
+  padding: 1%;
   text-align: center;
 }
 .col-skills {
@@ -196,12 +195,21 @@ section {
 }
 
 .col-skills ul {
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  padding-top: 10px;
+  height: 100%;
 }
 
 .col-skills ul li {
   text-decoration: none;
   list-style: none;
+}
+.col-skills ul li img {
+  height: 20px;
+  margin-right: 10px;
 }
 .card h3 {
   border-bottom: 4px solid var(--white);
@@ -362,7 +370,7 @@ footer p {
 
 @media screen and (max-width: 1024px) {
   section {
-    padding: 0 10%;
+    padding: 0 5%;
     height: fit-content;
     min-height: 100vh;
     margin: auto;
@@ -398,6 +406,9 @@ footer p {
   h1 {
     font-size: 48px;
     text-align: center;
+  }
+  .card_content {
+    padding: 20px;
   }
 }
 @media screen and (max-width: 768px) {
