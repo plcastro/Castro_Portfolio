@@ -17,14 +17,13 @@
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
-  /* border: 2px solid white; */
 }
 @keyframes reveal-right {
   0% {
     opacity: 0;
-    filter: blur(5px);
+    filter: blur(100px);
     transform: translateX(-100%);
-    transition: all 0.5s ease-in-out;
+    transition: all 1.5s ease-in-out;
   }
   100% {
     opacity: 1;
@@ -140,6 +139,8 @@ nav ul li a.active::after {
   -webkit-text-stroke-color: rgb(255, 255, 255);
   font-size: 64px;
   font-weight: 1000;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--white);
 }
 #text-highlight {
   -webkit-text-stroke-width: 0;
@@ -183,7 +184,7 @@ nav ul li a.active::after {
   white-space: nowrap;
   overflow: hidden;
   border-right: 5px solid var(--white);
-  animation: typing 2s steps(20), blink-cursor 0.75s step-end infinite alternate;
+  animation: typing 2s steps(20), blink-cursor 0.4s step-end infinite alternate;
 }
 @keyframes blink-cursor {
   50% {
@@ -192,10 +193,10 @@ nav ul li a.active::after {
 }
 @keyframes typing {
   from {
-    width: 0;
+    max-width: 0;
   }
   to {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -205,7 +206,7 @@ nav ul li a.active::after {
   padding: 0 20px;
 }
 .col-about-description p {
-  margin-bottom: 10px;
+  margin: 20px 0;
 }
 .col-skills,
 .col-project {
@@ -240,6 +241,8 @@ nav ul li a.active::after {
 .col-skills ul li img {
   height: 20px;
   margin-right: 10px;
+  align-self: center;
+  justify-self: center;
 }
 .card h3 {
   border-bottom: 4px solid var(--white);
@@ -395,6 +398,14 @@ footer {
   text-align: center;
   padding: 16px 0;
 }
+@media screen and (max-width: 1315px) {
+  nav {
+    padding: 10px 5%;
+  }
+  section {
+    padding: 0 5%;
+  }
+}
 @media screen and (max-width: 1280px) {
   .col-project,
   .col-skills {
@@ -440,13 +451,6 @@ footer {
   .col-home-intro,
   .col-about-description {
     order: 2;
-  }
-  #name {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 18ch;
-    text-align: center;
   }
   #name,
   .row-title,
@@ -552,6 +556,9 @@ footer {
 }
 
 @media screen and (max-width: 320px) {
+  .col-about-description {
+    padding: 0;
+  }
   #name {
     font-size: 28px;
   }
