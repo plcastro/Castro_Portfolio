@@ -19,6 +19,24 @@
     sans-serif;
   /* border: 2px solid white; */
 }
+@keyframes reveal-right {
+  0% {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 0.5s ease-in-out;
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  section.in-view {
+    transition: none;
+  }
+}
 body {
   background-color: var(--background-color);
   min-height: 100vh;
@@ -35,6 +53,9 @@ section {
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
+}
+section.in-view:not(#home) {
+  animation: reveal-right 0.5s 0.5s both;
 }
 h2 {
   font-size: 32px;
@@ -152,12 +173,30 @@ nav ul li a.active::after {
   text-align: left;
 }
 #name {
+  display: inline-block;
   text-align: left;
   color: #ffffff00;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: rgb(255, 255, 255);
   font-size: 52px;
   font-weight: 1000;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 5px solid var(--white);
+  animation: typing 2s steps(20), blink-cursor 0.75s step-end infinite alternate;
+}
+@keyframes blink-cursor {
+  50% {
+    border-right-color: transparent;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .col-about-description {
@@ -499,6 +538,9 @@ footer {
   }
 }
 @media screen and (max-width: 548px) {
+  #name {
+    font-size: 32px;
+  }
   .col-skills,
   .col-project {
     flex: 90%;
@@ -506,5 +548,11 @@ footer {
   .col-skills,
   .col-project {
     height: fit-content;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #name {
+    font-size: 28px;
   }
 }
