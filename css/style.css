@@ -4,7 +4,7 @@
   --hot-pink: #8c26a5;
   --light-blue: #008cff;
   --light-purple: #ea00ff;
-  --background-color: #000f1c;
+  --background-color: #021525;
   --slight-transparent-background-color: #000f1c9e;
   --transparent: #ffffff00;
 }
@@ -17,14 +17,24 @@
   font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
+  /* border: 2px solid white; */
 }
 body {
   background-color: var(--background-color);
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   width: 100%;
-  margin: 0;
-  padding: 0;
   scroll-behavior: smooth;
+}
+section {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  margin: auto;
+  padding: 0 15%;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
 }
 h2 {
   font-size: 32px;
@@ -95,19 +105,10 @@ nav ul li a.active::after {
 .sidebar-mobile li,
 .sidebar-mobile a {
   width: 100%;
+  padding: 10px;
 }
 .menu-button {
   display: none;
-}
-section {
-  display: flex;
-  height: 100vh;
-  width: 100%;
-  margin: auto;
-  padding: 0 20%;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
 }
 .row-title {
   flex: 100%;
@@ -119,45 +120,36 @@ section {
   font-size: 64px;
   font-weight: 1000;
 }
-.row-home {
+#text-highlight {
+  -webkit-text-stroke-width: 0;
+  -webkit-text-stroke-color: 0;
+}
+.row-home,
+.row-about {
   display: flex;
   flex: 100%;
+  flex-wrap: wrap;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   margin: auto;
 }
-#col-home-profile {
+#col-home-profile,
+#col-about-profile {
   flex: 40%;
 }
-#col-home-profile img {
+#col-home-profile img,
+#col-about-profile img {
   width: 100%;
 }
-.col-home-intro {
+.col-home-intro,
+.col-about-description {
   flex: 60%;
   margin: auto;
+}
+.col-home-intro {
   align-items: center;
-}
-.col-home-intro #name {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 2px solid #fff; /* Thinner cursor */
-  width: 18ch;
-  max-width: 0;
-  animation: typing 2.5s steps(17, end) forwards, blink 0.7s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    max-width: 0;
-  }
-  to {
-    max-width: 17ch;
-  }
-}
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+  text-align: left;
 }
 #name {
   text-align: left;
@@ -167,14 +159,14 @@ section {
   font-size: 52px;
   font-weight: 1000;
 }
-.row-about {
-  display: block;
-  margin: auto;
-}
-.row-about p {
+
+.col-about-description {
   text-align: justify;
   height: fit-content;
-  margin: 20px auto;
+  padding: 0 20px;
+}
+.col-about-description p {
+  margin-bottom: 10px;
 }
 .col-skills,
 .col-project {
@@ -193,7 +185,6 @@ section {
   flex: 50%;
   height: 450px;
 }
-
 .col-skills ul {
   display: flex;
   flex-direction: column;
@@ -225,7 +216,7 @@ section {
   flex: 100%;
   margin: auto;
   height: 100%;
-  padding: 2%;
+  padding: 5px;
   border-radius: 30px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
@@ -236,7 +227,7 @@ section {
   flex: 100%;
   text-align: center;
   align-items: center;
-  padding: 10%;
+  padding: 5%;
   background: rgb(5, 6, 45);
   border-radius: 24px;
   width: 100%;
@@ -244,12 +235,7 @@ section {
 }
 #download-cv-button {
   align-items: center;
-  background-image: linear-gradient(
-    144deg,
-    var(--hot-pink),
-    var(--dark-purple) 40%,
-    var(--light-blue)
-  );
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
   border: 0;
   border-radius: 8px;
   color: #ffffff;
@@ -260,7 +246,7 @@ section {
   line-height: 1em;
   width: 200px;
   text-align: center;
-  padding: 6px;
+  padding: 3px;
   text-decoration: none;
   user-select: none;
   -webkit-user-select: none;
@@ -326,6 +312,10 @@ section {
   transform: scale(1.02);
   transition: all 0.3s ease-in-out;
 }
+.row-about,
+.row-contact {
+  background-color: var(--background-color);
+}
 .row-contact p {
   text-align: center;
   margin: 20px auto;
@@ -338,33 +328,38 @@ section {
   align-items: center;
   flex-wrap: wrap;
 }
-.contacts img {
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+.socials img {
   flex: 25%;
-  margin: 10px;
+  height: 50px;
   transition: transform 0.3s ease-in-out;
 }
-.contacts a {
+.socials a {
   text-decoration: none;
 }
-.contacts img:hover {
+.socials img:hover {
   transform: scale(1.1);
 }
 main {
   flex: 1;
 }
 footer {
-  display: flex;
-  bottom: 0;
-  align-items: center;
-  justify-content: center;
-}
-footer p {
+  width: 100%;
   text-align: center;
+  padding: 16px 0;
 }
 @media screen and (max-width: 1280px) {
   .col-project,
   .col-skills {
-    flex: 50%;
+    flex: 33%;
   }
 }
 
@@ -387,7 +382,8 @@ footer p {
   #download-cv-button {
     margin: auto;
   }
-  #col-home-profile {
+  #col-home-profile,
+  #col-about-profile {
     display: flex;
     flex: 100%;
     width: 100%;
@@ -395,11 +391,23 @@ footer p {
     justify-content: center;
     align-items: center;
   }
-  #col-home-profile img {
+  #col-home-profile img,
+  #col-about-profile img {
     height: 300px;
   }
   .col-home-intro {
+    text-align: center;
+  }
+  .col-home-intro,
+  .col-about-description {
     order: 2;
+  }
+  #name {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 18ch;
+    text-align: center;
   }
   #name,
   .row-title,
@@ -429,47 +437,40 @@ footer p {
   .menu-button {
     display: block;
   }
+  nav,
+  nav ul li a {
+    padding: 10px;
+  }
   nav ul li a:not(.icon-link)::after {
     height: 4px;
     background-color: #ffffff;
   }
-  nav ul li a {
-    padding: 10px;
-  }
   section {
     flex-direction: row;
-    margin-top: 20px;
-    padding: 0 5%;
+    padding: 5% 5% 0;
   }
   .row-home {
     margin-top: 20px;
     height: 100vh;
   }
-  #col-home-profile {
-    flex: 100%;
-  }
+  #col-home-profile,
   .col-home-intro {
     flex: 100%;
   }
-  @media screen and (max-width: 768px) {
-    .col-home-intro #name {
-      font-size: 27px;
-      animation: typing 2.5s steps(19, end) forwards,
-        blink 0.7s step-end infinite;
-    }
-    @keyframes typing {
-      from {
-        max-width: 0;
-      }
-      to {
-        max-width: 17ch;
-      }
-    }
+  .col-home-intro {
+    text-align: center;
+  }
+  .col-skills {
+    flex: 50%;
+  }
+  #col-home-profile img,
+  #col-about-profile img {
+    height: 200px;
   }
   h1,
   #name,
   .row-title {
-    font-size: 32px;
+    font-size: 40px;
     -webkit-text-stroke-width: 1px;
   }
   h2 {
@@ -479,13 +480,7 @@ footer p {
   p {
     font-size: 16px;
   }
-  .col-skills,
-  .col-project {
-    flex: 90%;
-  }
-  .col-skills {
-    height: 200px;
-  }
+
   .row-skills .card_content {
     padding: 10px;
   }
@@ -496,10 +491,20 @@ footer p {
   #download-cv-button span {
     font-size: 16px;
   }
-  .contacts img {
+  .socials img {
     flex: 50%;
     height: 42px;
-    margin: 10px;
+    margin: 2px;
     transition: transform 0.3s ease-in-out;
+  }
+}
+@media screen and (max-width: 548px) {
+  .col-skills,
+  .col-project {
+    flex: 90%;
+  }
+  .col-skills,
+  .col-project {
+    height: fit-content;
   }
 }
