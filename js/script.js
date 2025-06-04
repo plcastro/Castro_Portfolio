@@ -7,11 +7,12 @@ const observer = new IntersectionObserver(
     });
   },
   {
-    rootMargin: "0px",
-    threshold: [0, 0.1, 1],
+    rootMargin: "100px",
+    threshold: [0.1],
   }
 );
-const tags = document.querySelectorAll("section");
+
+const tags = document.querySelectorAll("section > *");
 tags.forEach((tag) => {
   observer.observe(tag);
 });

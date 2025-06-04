@@ -18,17 +18,18 @@
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
 }
-@keyframes reveal-right {
+@keyframes reveal-up {
   0% {
     opacity: 0;
-    filter: blur(100px);
-    transform: translateX(-100%);
+    filter: blur(10px);
+    transform: translateY(100%);
+    overflow-y: hidden;
     transition: all 1.5s ease-in-out;
   }
   100% {
     opacity: 1;
     filter: blur(0);
-    transform: translateX(0);
+    transform: translateY(0);
   }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -53,8 +54,8 @@ section {
   flex-wrap: wrap;
   align-content: center;
 }
-section.in-view:not(#home) {
-  animation: reveal-right 0.5s 0.5s both;
+*.in-view:not(#home) {
+  animation: reveal-up 0.5s 0.5s both;
 }
 h2 {
   font-size: 32px;
@@ -77,6 +78,12 @@ nav {
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   z-index: 100;
+}
+#nav-logo {
+  display: flex;
+  margin: 0 auto auto 0;
+  height: 64px;
+  padding: 0;
 }
 nav ul li {
   list-style: none;
@@ -156,18 +163,26 @@ nav ul li a.active::after {
   justify-content: center;
   margin: auto;
 }
-#col-home-profile,
-#col-about-profile {
+#col-home-profile {
   flex: 40%;
 }
+#col-about-profile {
+  flex: 30%;
+}
+
 #col-home-profile img,
 #col-about-profile img {
   width: 100%;
 }
 .col-home-intro,
 .col-about-description {
-  flex: 60%;
   margin: auto;
+}
+.col-home-intro {
+  flex: 60%;
+}
+.col-about-description {
+  flex: 70%;
 }
 .col-home-intro {
   align-items: center;
@@ -201,7 +216,7 @@ nav ul li a.active::after {
 }
 
 .col-about-description {
-  text-align: justify;
+  text-align: left;
   height: fit-content;
   padding: 0 20px;
 }
@@ -284,6 +299,7 @@ nav ul li a.active::after {
   display: flex;
   margin-top: 10px;
   font-size: 16px;
+  font-weight: 500;
   justify-content: center;
   line-height: 1em;
   width: 200px;
@@ -424,7 +440,6 @@ footer {
     justify-content: center;
   }
   .row-home {
-    margin-top: 64px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -469,6 +484,10 @@ footer {
     border: 2px solid var(--white);
     border-radius: 7px;
   }
+  nav img {
+    display: block;
+    margin-right: auto;
+  }
   #close-icon {
     display: block;
     margin-right: auto;
@@ -493,7 +512,7 @@ footer {
     padding: 5% 5% 0;
   }
   .row-home {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     height: 100vh;
   }
   #col-home-profile,
@@ -556,6 +575,15 @@ footer {
 }
 
 @media screen and (max-width: 320px) {
+  #col-home-profile,
+  #col-about-profile {
+    flex: 100%;
+    width: 100%;
+  }
+  #col-home-profile img,
+  #col-about-profile img {
+    height: 300px;
+  }
   .col-about-description {
     padding: 0;
   }
