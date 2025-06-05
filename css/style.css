@@ -18,28 +18,36 @@
     "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
     sans-serif;
 }
-@keyframes reveal-up {
-  0% {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateY(100%);
-    overflow-y: hidden;
-    transition: all 1.5s ease-in-out;
-  }
-  100% {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
+/* Optional: Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .in-view {
+    animation: none;
+    transition: none;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  section.in-view {
-    transition: none;
+
+section > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Trigger smooth animation */
+*.in-view {
+  animation: reveal-up 0.8s ease-out forwards;
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 body {
   background-color: var(--background-color);
-
   width: 100%;
   scroll-behavior: smooth;
 }
@@ -52,9 +60,6 @@ section {
   flex-direction: row;
   flex-wrap: wrap;
   align-content: center;
-}
-*.in-view {
-  animation: reveal-up 0.5s 0.5s both;
 }
 h2 {
   font-size: 32px;

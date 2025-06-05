@@ -13,7 +13,8 @@ const observer = new IntersectionObserver(
 );
 
 const tags = document.querySelectorAll("section > *");
-tags.forEach((tag) => {
+tags.forEach((tag, i) => {
+  tag.style.transitionDelay = `${i * 100}ms`;
   observer.observe(tag);
 });
 
