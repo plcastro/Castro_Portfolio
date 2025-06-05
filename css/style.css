@@ -606,7 +606,7 @@ footer {
   }
   #col-home-profile img,
   #col-about-profile img {
-    height: 300px;
+    height: 100%;
   }
   .col-about-description {
     padding: 0;
