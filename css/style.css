@@ -241,10 +241,12 @@ nav ul li a.active::after {
 .col-about-description p {
   margin: 20px 0;
 }
+.col-project,
+.col-skills {
+  flex: 33%;
+}
 .col-skills,
 .col-project {
-  display: flex;
-  flex: 33%;
   flex-direction: row;
   margin: auto;
   width: 50%;
@@ -440,10 +442,6 @@ footer {
   }
 }
 @media screen and (max-width: 1280px) {
-  .col-project,
-  .col-skills {
-    flex: 33%;
-  }
 }
 
 @media screen and (max-width: 1024px) {
