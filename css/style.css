@@ -235,7 +235,7 @@ nav ul li a.active::after {
 }
 
 .col-about-description {
-  text-align: left;
+  text-align: justify;
   height: fit-content;
   padding: 0 20px;
 }
@@ -584,6 +584,12 @@ footer {
   }
 }
 @media screen and (max-width: 548px) {
+  .col-about-description {
+    text-align: left;
+    height: fit-content;
+    padding: 0;
+  }
+
   #col-home-profile,
   #col-about-profile {
     flex: 100%;
