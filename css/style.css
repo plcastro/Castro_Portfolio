@@ -46,10 +46,24 @@ section > * {
     transform: translateY(0);
   }
 }
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
 body {
   background-color: var(--background-color);
   width: 100%;
   scroll-behavior: smooth;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Fills remaining space */
 }
 section {
   display: flex;
@@ -230,6 +244,7 @@ nav ul li a.active::after {
 .col-skills,
 .col-project {
   display: flex;
+  flex: 33%;
   flex-direction: row;
   margin: auto;
   width: 50%;
@@ -237,11 +252,11 @@ nav ul li a.active::after {
   text-align: center;
 }
 .col-skills {
-  flex: 33%;
   height: 250px;
 }
 .col-project {
-  flex: 50%;
+  align-items: center;
+  justify-content: center;
   height: 450px;
 }
 .col-skills ul {
@@ -276,7 +291,8 @@ nav ul li a.active::after {
   flex-direction: column;
   flex: 100%;
   margin: auto;
-  height: 100%;
+  min-height: 100%;
+  height: fit-content;
   padding: 5px;
   border-radius: 30px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -288,7 +304,7 @@ nav ul li a.active::after {
   flex: 100%;
   text-align: center;
   align-items: center;
-  padding: 5%;
+  padding: 2%;
   background: rgb(5, 6, 45);
   border-radius: 24px;
   width: 100%;
@@ -523,8 +539,13 @@ footer {
   .col-home-intro {
     text-align: center;
   }
-  .col-skills {
+  .col-skills,
+  .col-project {
     flex: 50%;
+  }
+  .col-project {
+    padding: 2%;
+    height: 400px;
   }
   #col-home-profile img,
   #col-about-profile img {
