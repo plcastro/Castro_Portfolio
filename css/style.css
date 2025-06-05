@@ -538,14 +538,15 @@ footer {
   .col-home-intro {
     text-align: center;
   }
-  .col-skills,
-  .col-project {
+  .col-skills {
     flex: 50%;
   }
   .col-project {
+    flex: 80%;
+    height: fit-content;
     padding: 2%;
-    height: 400px;
   }
+
   #col-home-profile img,
   #col-about-profile img {
     height: 200px;
@@ -563,7 +564,9 @@ footer {
   p {
     font-size: 16px;
   }
-
+  .card_content {
+    padding: 10px;
+  }
   .row-skills .card_content {
     padding: 10px;
   }
@@ -582,6 +585,15 @@ footer {
   }
 }
 @media screen and (max-width: 548px) {
+  #col-home-profile,
+  #col-about-profile {
+    flex: 100%;
+    width: 100%;
+  }
+  #col-home-profile img,
+  #col-about-profile img {
+    height: 100%;
+  }
   #name {
     font-size: 32px;
   }
@@ -599,15 +611,6 @@ footer {
   .row-home {
     margin-top: 0;
     height: 100vh;
-  }
-  #col-home-profile,
-  #col-about-profile {
-    flex: 100%;
-    width: 100%;
-  }
-  #col-home-profile img,
-  #col-about-profile img {
-    height: 100%;
   }
   .col-about-description {
     padding: 0;
