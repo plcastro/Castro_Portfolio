@@ -99,8 +99,9 @@ nav {
 }
 #nav-logo {
   display: flex;
-  margin: 0 auto auto 0;
-  height: 64px;
+  margin-right: auto;
+  margin-top: auto;
+  height: 50px;
   padding: 0;
 }
 nav ul li {
