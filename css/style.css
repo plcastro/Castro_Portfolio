@@ -597,7 +597,7 @@ footer {
   }
   #col-home-profile img,
   #col-about-profile img {
-    height: 100%;
+    width: 80%;
   }
   #name {
     font-size: 32px;
