@@ -466,26 +466,7 @@ footer {
   #show-cv-button {
     margin: auto;
   }
-  #col-home-profile,
-  #col-about-profile {
-    display: flex;
-    flex: 100%;
-    width: 100%;
-    order: 1;
-    justify-content: center;
-    align-items: center;
-  }
-  #col-home-profile img,
-  #col-about-profile img {
-    height: 300px;
-  }
-  .col-home-intro {
-    text-align: center;
-  }
-  .col-home-intro,
-  .col-about-description {
-    order: 2;
-  }
+
   #name,
   .row-title,
   h1 {
@@ -496,7 +477,7 @@ footer {
     padding: 20px;
   }
 }
-@media screen and (max-width: 815px) {
+@media screen and (max-width: 945px) {
   #menu-icon {
     display: block;
     margin-left: auto;
@@ -527,8 +508,27 @@ footer {
     background-color: #ffffff;
   }
   section {
-    flex-direction: row;
     padding: 5% 5% 0;
+  }
+  #col-home-profile,
+  #col-about-profile {
+    display: flex;
+    flex: 100%;
+    width: 100%;
+    order: 1;
+    justify-content: center;
+    align-items: center;
+  }
+  #col-home-profile img,
+  #col-about-profile img {
+    height: 300px;
+  }
+  .col-home-intro {
+    text-align: center;
+  }
+  .col-home-intro,
+  .col-about-description {
+    order: 2;
   }
   .row-home {
     margin-top: 10px;
