@@ -630,6 +630,6 @@ footer {
     font-size: 28px;
   }
   .col-project .card_content {
-    padding: 0;
+    padding: 4px;
   }
 }
