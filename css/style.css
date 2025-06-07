@@ -463,9 +463,6 @@ footer {
     justify-content: center;
     text-align: center;
   }
-  #show-cv-button {
-    margin: auto;
-  }
 
   #name,
   .row-title,
@@ -539,6 +536,9 @@ footer {
   }
   .col-home-intro {
     text-align: center;
+  }
+  #show-cv-button {
+    margin: auto;
   }
   .col-skills {
     flex: 50%;
