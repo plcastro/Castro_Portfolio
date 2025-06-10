@@ -597,10 +597,10 @@ footer {
   }
   #col-home-profile img,
   #col-about-profile img {
-    width: 80%;
+    height: 90%;
   }
   #name {
-    font-size: 32px;
+    font-size: 30px;
   }
   .col-skills,
   .col-project {
@@ -621,6 +621,6 @@ footer {
     padding: 0;
   }
   #name {
-    font-size: 28px;
+    font-size: 26px;
   }
 }
