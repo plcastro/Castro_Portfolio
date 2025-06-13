@@ -313,6 +313,9 @@ nav ul li a.active::after {
   width: 100%;
   height: 100%;
 }
+.col-project .card_content {
+  padding: 10%;
+}
 #show-cv-button {
   align-items: center;
   background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
@@ -492,6 +495,9 @@ footer {
   .card_content {
     padding: 20px;
   }
+  .col-project .card_content {
+    padding: 5%;
+  }
 }
 @media screen and (max-width: 815px) {
   #menu-icon {
@@ -568,6 +574,9 @@ footer {
   }
   .row-skills .card_content {
     padding: 10px;
+  }
+  .col-project .card_content {
+    padding: 2%;
   }
   #show-cv-button {
     text-align: center;
